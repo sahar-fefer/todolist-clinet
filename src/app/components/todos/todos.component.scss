@@ -1,0 +1,79 @@
+.todos {
+    margin: 15vw;
+    .completed {
+        color: gray;
+        .done {
+            background-color: #018baa !important;
+        }
+        .content {
+            text-decoration: line-through;
+        }
+    }
+    .todo {
+        height: 5vh;
+        display: flex;
+        margin: 15px 0;
+        align-items: center;
+        .space {
+            margin: 0 2px;
+        }
+        button {
+            border-radius: 8px;
+            color: white;
+            border: none;
+            &.done {
+                background-color: #68cae2;
+            }
+            &.edit {
+                background-color: #71a977;
+            }
+            &.delite {
+                background-color: #dc3444;
+            }
+        }
+        .id {
+            flex: 1 1 50px;
+        }
+        .content {
+            flex: 1 1 100%;
+            border: 1px solid rgb(201, 199, 199);
+            border-radius: 10px;
+            height: inherit;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            overflow: hidden;
+        }
+        .done {
+            .not-completed {
+                color: transparent;
+            }
+        }
+    }
+}
+.todo-input {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    appearance: none;
+    border: none;
+    background-color: #f3f3f3;
+    margin-top: 15px;
+    font-size: 20px;
+    outline: none;
+}
+.todo-submit {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    background-color: #fe4880;
+    color: #fff;
+    margin: 15px auto;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
