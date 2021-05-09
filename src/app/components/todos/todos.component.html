@@ -1,0 +1,18 @@
+<div class="todos">
+    <header>
+        <h1>To Do List</h1>
+    </header>
+    <div class="todo" *ngFor="let todo of todos; let i = index;">
+        <div class="index">{{i}}</div>
+        <button class="done space">
+            <mat-icon>done</mat-icon>
+        </button>
+        <div class="content space">{{todo.content}}</div>
+        <button class="edit space">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button class="delite space">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</div>
