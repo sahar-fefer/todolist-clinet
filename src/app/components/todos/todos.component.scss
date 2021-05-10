@@ -7,10 +7,11 @@
         }
         .content {
             text-decoration: line-through;
+            color: gray;
         }
     }
     .todo {
-        height: 5vh;
+        height: 26px;
         display: flex;
         margin: 15px 0;
         align-items: center;
@@ -27,53 +28,62 @@
             &.edit {
                 background-color: #71a977;
             }
-            &.delite {
+            &.delete {
                 background-color: #dc3444;
             }
         }
         .id {
             flex: 1 1 50px;
         }
-        .content {
-            flex: 1 1 100%;
-            border: 1px solid rgb(201, 199, 199);
-            border-radius: 10px;
-            height: inherit;
-            display: flex;
-            align-items: center;
-            padding: 0 5px;
-            overflow: hidden;
-        }
-        .done {
-            .not-completed {
-                color: transparent;
+        input:focus-visible {
+                outline: none;
+            }
+        .content-form {
+            margin: 0;
+            .content {
+                flex: 1 1 100%;
+                border: 1px solid rgb(201, 199, 199);
+                border-radius: 8px;
+                height: inherit;
+                display: flex;
+                align-items: center;
+                padding: 0 5px;
+                overflow: hidden;
             }
         }
     }
 }
-.todo-input {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    appearance: none;
-    border: none;
-    background-color: #f3f3f3;
+form {
+    display: flex;
+    justify-content: space-between;
     margin-top: 15px;
-    font-size: 20px;
-    outline: none;
-}
-.todo-submit {
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-    background-color: #fe4880;
-    color: #fff;
-    margin: 15px auto;
-    padding: 10px 15px;
-    font-size: 18px;
-    font-weight: 700;
+    .todo-input {
+        width: 80%;
+        // height: 26px;
+        appearance: none;
+        border: none;
+        padding: 5px 10px;
+        margin-right: 2px;
+        // box-sizing: border-box;
+        background-color: #f3f3f3;
+        font-size: 20px;
+        outline: none;
+        border-radius: 8px;
+    }
+    .todo-submit {
+        display: block;
+        width: 20%;
+        // height: 26px;
+        padding: 5px;
+        margin-left: 2px;
+        appearance: none;
+        border: none;
+        outline: none;
+        background: none;
+        background-color: #fe4880;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 8px;
+    }
 }

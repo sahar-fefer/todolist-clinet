@@ -2,16 +2,25 @@
     <header>
         <h1>To Do List</h1>
     </header>
-    <div class="todo" *ngFor="let todo of todos; let i = index;">
-        <div class="index">{{i}}</div>
-        <button class="done space">
+    <form (submit)="addTodo()">
+        <input type="text" name="inputTodo" placeholder="Enter todo..." class="todo-input" [(ngModel)]="inputTodo" />
+        <input type="submit" value="Add" class="todo-submit" />
+    </form>
+    <div *ngFor="let todo of todos; let i = index;" class="todo {{(todo.completed ? 'completed' : '') }}">
+        <div class="index">{{i+1}}</div>
+        <button class="done space" (click)="toggleDone(i)">
             <mat-icon>done</mat-icon>
         </button>
-        <div class="content space">{{todo.content}}</div>
-        <button class="edit space">
-            <mat-icon>edit</mat-icon>
-        </button>
-        <button class="delite space">
+        <form class="content-form" (submit)="editTodo(i, event)">
+            <input #task type="text" class="content space" value={{todo.content}}
+                readonly="{{(todo.isInEditing && readonly) }}" (keyup.enter)="updateTodo(i, task.value)"
+                (blur)="updateTodo(i, task.value)" />
+            <button type="submit" class="edit space">
+                <mat-icon *ngIf="!todo.isInEditing">edit</mat-icon>
+                <mat-icon *ngIf="todo.isInEditing">done</mat-icon>
+            </button>
+        </form>
+        <button class="delete space" (click)="deleteTodo(i)">
             <mat-icon>delete</mat-icon>
         </button>
     </div>
