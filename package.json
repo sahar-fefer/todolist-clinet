@@ -23,6 +23,9 @@
     "@angular/router": "~11.2.12",
     "bootstrap": "^5.0.0",
     "rxjs": "~6.6.0",
+    "rxjs-observable": "^0.0.7",
+    "socket.io": "^3.1.2",
+    "socket.io-client": "^4.1.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
